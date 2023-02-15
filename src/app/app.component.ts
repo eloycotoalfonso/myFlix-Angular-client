@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myFlix-Angular-client';
+
+  toolbarVisible(): string | null {
+    return localStorage.getItem("user");
+  }
 }
