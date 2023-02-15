@@ -18,7 +18,7 @@ export class MovieCardComponent {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
-      return this.movies;
+      // return this.movies;
     });
   }
 
