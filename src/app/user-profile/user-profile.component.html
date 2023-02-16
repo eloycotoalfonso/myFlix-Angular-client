@@ -1,1 +1,68 @@
-<p>user-profile works!</p>
+<div class = "profile">
+    <h1 class = "profile-title"> My profile </h1>
+    <mat-card-content class = "profile-update">
+        <h2 class = "profile-update-header">User info </h2>
+        <form>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input
+                    mat-Input
+                    [(ngModel)] = "updateUser.username"
+                    value = "{{updateUser.username}}"
+                    type = "text"
+                    name = "username"
+                    required
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password *</mat-label>
+                <input
+                    mat-Input
+                    [(ngModel)] = "updateUser.password"
+                    value = "{{updateUser.password}}"
+                    type = "password"
+                    name = "Password"
+                    required
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input
+                    mat-Input
+                    [(ngModel)] = "updateUser.email"
+                    value = "{{updateUser.email}}"
+                    type = "email"
+                    name = "email"
+                    required
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Birthday</mat-label>
+                <input 
+                    matInput 
+                    [(ngModel)]="updateUser.birthday"
+                    type="date"
+                    value="{{ updateUser.birthday | date }}"
+                    name="Birthday" />
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class = "profile-actions">
+        <button
+            class = "profile-actions-update"
+            mat-raised-button
+            (click) = "updateUserInfo()"
+            color = "secondary"
+        >
+        Update profile
+        </button>
+        <button 
+            class = "profile-actions-delete"
+            mat-raised-button
+            (click) = "deleteAccount()"
+            color = "warn"
+        >
+        Delete account
+        </button>
+    </mat-card-actions>
+</div>
