@@ -1,0 +1,38 @@
+:host {
+    .main-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    h1 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .join-button {
+        background-color: #484848;
+        color: white;
+        margin: 10px;
+        font-size: large;
+        width: 100px;
+        height: 50px;
+    }
+
+    .login-button {
+        background-color: #484848;
+        color: white;
+        margin: 10px;
+        font-size: large;
+        width: 100px;
+        height: 50px;
+    }
+
+}
