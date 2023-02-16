@@ -2,7 +2,7 @@
 
 <mat-card>
     <mat-card-header>
-        <mat-card-title> Sign Up!</mat-card-title>
+        <mat-card-title class = "registration-title"> Sign Up!</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <form>
@@ -47,11 +47,11 @@
             </mat-form-field>
         </form>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class = "registration-actions">
         <button
+            class = "registration-button"
             mat-raised-button
             (click) = "registerUser()"
-            color = "primary"
         >
             Sign Up
         </button>
