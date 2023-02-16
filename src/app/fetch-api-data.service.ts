@@ -86,19 +86,18 @@ export class FetchApiDataService {
       );
   }
 
-  //Get User //I dont really have an endpoint for "geting user" the code would be somth like this
-  //please checkout the documentation page at: https://new-super-flix.herokuapp.com/documentation
-  // getUser(): Observable<any>{
-  //   const username = localStorage.getItem('user');
-  //   const token = localStorage.getItem('token');
-  //   return this.http.get(apiUrl + 'users/' + username, {headers: new HttpHeaders(
-  //     {
-  //       Authorization: 'Bearer' + token,
-  //     })}).pipe(
-  //       map(this.extractResponseData),
-  //       catchError(this.handleError)
-  //     );
-  // }
+  //Get information about the current logged in user
+  getUser(): Observable<any>{
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'users/' + username, {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
+  }
 
   //Get favourite moives for a user
   getFavoriteMovies(): Observable <any>{

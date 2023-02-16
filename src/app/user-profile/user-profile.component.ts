@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class UserProfileComponent implements OnInit {
   user: any = {};
-  initialInput: any = {};
 
   @Input() updateUser = {
     username: "",
@@ -30,12 +29,20 @@ export class UserProfileComponent implements OnInit {
     this.getUserInfo();
   }
 
-  getUserInfo():void {
+  getUserInfo(): void {
     // this.updateUser.username = localStorage.getItem('user');
-    console.log('esto es el this.updateuser');
-    console.log(this.updateUser);
-    console.log('esto es el local.storage(user)');
-    console.log(localStorage.getItem('user'));
+    
+    this.fetchApiData.getUser().subscribe((result: any) => {
+      this.user = result[0];
+      // console.log(result[0]);
+      this.updateUser.username = this.user.username;
+      this.updateUser.email = this.user.email;
+      this.updateUser.birthday = this.user.birth;
+    });
+    // console.log('esto es el this.updateUser');
+    // console.log(this.updateUser);
+    // console.log('esto es el local.storage(user)');
+    // console.log(localStorage.getItem('user'));
 
     
     // this.updateUser.email = mail != null ? mail: ''; 
@@ -55,7 +62,6 @@ export class UserProfileComponent implements OnInit {
           'OK',
           { duration: 2000, }
         );
-
       }
     })
   }
