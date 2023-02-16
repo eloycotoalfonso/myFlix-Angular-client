@@ -1,0 +1,21 @@
+$backgroundColor: #c8c8c8;
+$color: #000;
+:host {
+    .genre-dialog{
+        padding: 5px;
+        background-color: $backgroundColor;
+    }
+
+    .genre-dialog-title{
+        color: $color;
+        margin-bottom: 5px;
+        font-size: large;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .genre-dialog-content{
+        text-align: justify;
+        color: $color;
+    }
+}

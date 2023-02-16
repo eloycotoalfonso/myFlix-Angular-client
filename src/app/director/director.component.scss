@@ -1,0 +1,19 @@
+$backgroundColor: #c8c8c8;
+$color: #000;
+:host {
+    .director-dialog {
+        padding: 5px;
+        background-color: $backgroundColor;
+    }
+    .director-dialog-title{
+        color: $color;
+        margin-bottom: 5px;
+        font-size: large;
+        font-weight: 400;
+        text-align: center;
+    }
+    .director-dialog-content {
+        text-align: justify;
+        color: $color;
+    }
+}
