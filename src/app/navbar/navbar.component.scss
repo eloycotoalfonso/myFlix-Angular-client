@@ -1,0 +1,27 @@
+:host {
+    .nav-bar {
+        display: flex;
+        justify-content:space-between;
+        padding: 0 5px;
+        margin-bottom: 20px;
+    }
+    .nav-bar--left {
+        // display: flex;
+        // justify-content:space-between;
+        padding: 0 5px;
+        
+    }
+    .nav-bar--right {
+        // display: flex;
+        // justify-content:space-between;
+        padding: 0 5px;
+    }
+    .nav-bar-button{
+        background-color: #424242;
+        color: whitesmoke;
+        border-radius: 2px;
+        margin: 10px;
+        font-size: x-large;
+        padding: 10px;
+    }
+}
