@@ -1,0 +1,40 @@
+:host {
+    .movies {
+        display: flex;
+        background-color: transparent;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+        border-color: white;
+        border-width: 1px;
+    }
+
+    .movie {
+        margin: 25px 10px;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: large;
+    }
+    
+    .movies-header {
+        background-color: transparent;
+    }
+    .movies-header-text {
+        color: whitesmoke;
+    }
+
+    .movies-actions{
+        background-color: transparent;
+    }
+
+    .card-button {
+        color: white;
+        background-color: #424242;
+        margin: 5px;
+    }
+    .favs-icon {
+        color: whitesmoke;
+    }
+}
