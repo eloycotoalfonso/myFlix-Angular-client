@@ -28,13 +28,14 @@ export class UserLoginFormComponent implements OnInit {
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       this.dialogRef.close();
-      // console.log(result);
+      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
       localStorage.setItem('user', result.user.username);
       // console.log('whats going on?');
       localStorage.setItem('token', result.token);
+      localStorage.setItem('email', result.user.email);
       this.router.navigate(['movies']);
     }, (result) => {
       this.snackBar.open(result, 'OK', {
