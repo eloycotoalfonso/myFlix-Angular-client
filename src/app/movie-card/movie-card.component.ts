@@ -25,6 +25,11 @@ export class MovieCardComponent {
     this.getFavoriteMovies();
   }
 
+  /**
+   * Fetch the movies via the API endpoint
+   * @function getMovies
+   * @returns array with every single movie
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -32,6 +37,10 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * This function is associated with a button that will open the view for that particular movie genre
+   * @function openGenre 
+   */
   openGenre(movie: any): void {
     const {Name, Description } = movie.Genre;
     this.dialog.open(GenreComponent,{
@@ -41,6 +50,10 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * This function is associated with a button that will open the view for that particular movie director
+   * @function openDirector 
+   */
   openDirector(movie: any): void {
     const {Name, Bio, Birth } = movie.Director;
     this.dialog.open(DirectorComponent, {
@@ -50,6 +63,10 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * This function is associated with a button that will open the view of the details of that movie
+   * @function openMovieDetails 
+   */
   openMovieDetails(movie: any): void {
     const {Title, Description } = movie;
     this.dialog.open(MovieDetailsComponent, {
@@ -59,6 +76,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * This function will fetch the list of favorite movies of the user
+   * @function getFavoriteMovies
+   * @returns Array with the ID number of every favorite movie
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
       this.favoriteMovies = resp[0].FavoriteMovies;
@@ -66,6 +88,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * This function will toggle the movie from favorite to not favorite and viceversa
+   * @function toggleFavorite
+   * @param movie {any}
+   */
   toggleFavorite(movie: any): void {
     const id = movie._id;
     // console.log(movie._id);
@@ -80,16 +107,32 @@ export class MovieCardComponent {
     };
   }
 
+  /**
+   * This function will check if the input movie is in the list of favorites
+   * @function movieIsFavorite
+   * @param id {string}
+   * @returns boolean
+   */
   movieIsFavorite(id: string): boolean {
     return this.favoriteMovies.includes(id);
   }
 
+  /**
+   * This function will add the movies to favorite list
+   * @function addToFavs
+   * @param id {string}
+   */
   addToFavs(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((resp: any) => {
       this.getFavoriteMovies();
     });
   }
 
+  /**
+   * This movie will remove the selected movie from the favorites list
+   * @function removeFromFAvs
+   * @param id {string}
+   */
   removeFromFavs(id: string): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe((resp: any) => {
       this.getFavoriteMovies();

@@ -29,6 +29,11 @@ export class UserProfileComponent implements OnInit {
     this.getUserInfo();
   }
 
+  /**
+   * This function gets the user info
+   * @function getUserInfo
+   * @returns an Object with user information
+   */
   getUserInfo(): void {
     // this.updateUser.username = localStorage.getItem('user');
     
@@ -39,14 +44,13 @@ export class UserProfileComponent implements OnInit {
       this.updateUser.email = this.user.email;
       this.updateUser.birthday = this.user.birth;
     });
-    // console.log('esto es el this.updateUser');
-    // console.log(this.updateUser);
-    // console.log('esto es el local.storage(user)');
-    // console.log(localStorage.getItem('user'));
-
-    
-    // this.updateUser.email = mail != null ? mail: ''; 
   }
+
+  /**
+   * This function send the information currently in the state of the component to the backend to update the info
+   * @function updateUserInfo
+   * @retunrs Object with new information
+   */
 
   updateUserInfo(): void {
     this.fetchApiData.editUser(this.updateUser).subscribe((result) => {
@@ -65,6 +69,12 @@ export class UserProfileComponent implements OnInit {
       }
     })
   }
+
+  /**
+   * This function will delete all the user info
+   * @function deleteAccount
+   * @returns Confirmation message and a complete message
+   */
 
   deleteAccount(): void {
     if(confirm ("All your data will be deleted, are you sure?")) {
