@@ -6,7 +6,7 @@
             <mat-form-field>
                 <mat-label> Username</mat-label>
                 <input
-                    mat-Input
+                    matInput
                     [(ngModel)] = "updateUser.username"
                     value = "{{updateUser.username}}"
                     type = "text"
@@ -15,9 +15,9 @@
                 />
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Password *</mat-label>
+                <mat-label>Password</mat-label>
                 <input
-                    mat-Input
+                    matInput
                     [(ngModel)] = "updateUser.password"
                     value = "{{updateUser.password}}"
                     type = "password"
@@ -28,7 +28,7 @@
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input
-                    mat-Input
+                    matInput
                     [(ngModel)] = "updateUser.email"
                     value = "{{updateUser.email}}"
                     type = "email"
